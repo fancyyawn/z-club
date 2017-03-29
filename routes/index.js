@@ -6,9 +6,9 @@ const topics = require('./topics');
 const users = require('./users');
 
 router.get('/', async(ctx)=>{
-    ctx.redirect('/topics');
+    await ctx.redirect('/topics');
 });
-router.use('/users', users.routes(), topics.allowedMethods());
+router.use('/users', users.routes(), users.allowedMethods());
 router.use('/topics', topics.routes(), topics.allowedMethods());
 
 module.exports = router;

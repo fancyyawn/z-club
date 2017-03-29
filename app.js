@@ -20,7 +20,7 @@ app.keys = config.keys;
 app.use(logger());
 app.use(bodyparser());
 
-app.use(statics(__dirname + '/public'));
+app.use(statics(config.staticConf));
 
 app.use(session({
     store: new MongoStore(config.mongodb)

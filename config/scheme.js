@@ -1,5 +1,5 @@
-var validator = require('validator');
-var crypto = require('crypto');
+const validator = require('validator');
+const crypto = require('crypto');
 
 module.exports = {
     "(GET|POST) /users/signup": {
@@ -63,8 +63,8 @@ function checkLogin() {
 }
 
 function checkSignupBody() {
-    var body = this.request.body;
-    var flash;
+    let body = this.request.body;
+    let flash;
     if (!body || !body.name) {
         flash = {error: '请填写用户名!'};
     }
@@ -95,8 +95,8 @@ function checkSignupBody() {
 }
 
 function checkSigninBody() {
-    var body = this.request.body;
-    var flash;
+    let body = this.request.body;
+    let flash;
     if (!body || !body.name) {
         flash = {error: '请填写用户名!'};
     }
@@ -114,8 +114,8 @@ function checkSigninBody() {
 }
 
 function checkCreateBody() {
-    var body = this.request.body;
-    var flash;
+    let body = this.request.body;
+    let flash;
     if (!body || !body.title || body.title.length < 10) {
         flash = {error: '请填写合法标题!'};
     }
@@ -137,8 +137,8 @@ function checkCreateBody() {
 }
 
 function checkReplyTopic() {
-    var body = this.request.body;
-    var flash;
+    let body = this.request.body;
+    let flash;
     if (!body || !body.topic_id || !validator.isMongoId(body.topic_id)) {
         flash = {error: '回复的帖子不存在!'};
     }

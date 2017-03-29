@@ -30,7 +30,7 @@ topics.get('/:id', async(ctx)=>{
         comments: comments
     })
 
-})
+});
 
 topics.post('/:id/comment', async(ctx)=>{
     let id = ctx.params.id;
@@ -42,7 +42,7 @@ topics.post('/:id/comment', async(ctx)=>{
 
     ctx.flash =  {success: '回复成功!'};
     await ctx.redirect(ctx.query.redirect || 'back')
-})
+});
 
 topics.get('/', async(ctx)=>{
 

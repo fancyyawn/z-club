@@ -1,7 +1,7 @@
 const User = require('../models').User;
 
 exports.addUser = (user)=>{
-    return User.create(user)
+    return User.create(user);
 };
 
 exports.getUserById = (id)=>{

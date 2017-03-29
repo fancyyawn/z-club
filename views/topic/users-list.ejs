@@ -1,6 +1,7 @@
 <% include ../header%>
 <div class="container">
     <div class="ui two column centered grid">
+        <% if(session.user){ %>
         <div class="right floated left aligned four wide column">
             <div class="ui cards">
                 <div class="card">
@@ -10,6 +11,7 @@
                 </div>
             </div>
         </div>
+        <% } %>
         <div class="left floated  twelve wide column">
             <div class="ui bottom attached active tab segment">
                 <div class="ui list">
